@@ -6,23 +6,6 @@
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
-    <!--
-    アプリケーションに関するエンド ユーザーの利用状況分析を収集するには、
-    追跡する各ページに以下のスクリプトを挿入します。
-    このコードを、終了 </head> タグの直前と、
-    andその他のすべてのスクリプトの前に配置します。最初のデータが数秒後に
-    自動的に表示されます。
-    -->
-    <script type="text/javascript">
-        var appInsights=window.appInsights||function(config){
-            function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
-        }({
-            instrumentationKey:"f2bb6307-2173-493f-af81-578659c107f3"
-        });
-
-        window.appInsights=appInsights;
-        appInsights.trackPageView();
-    </script>
 </head>
 
 <body ng-app="multiChannelToDo">
@@ -57,12 +40,6 @@
     </script>
     <script src="js/controllers/ToDoController.js" type="text/javascript"></script>
     <script src="js/services/ToDoService.js" type="text/javascript"></script>
-    <script>
-    $(document.body).find("*").click(function(event) {
-
-        appInsights.trackEvent(event.target.tagName + ": " + event.target.className);
-    });
-    </script>
 
 </body>
 </html>
